@@ -250,10 +250,10 @@ def fetch_github_stats(username):
 
 def generate_repo_blueprint(name, desc, is_centered_wide=False):
     filename = name.replace(" ", "_").lower()
-    width = 800 if is_centered_wide else 395
+    width = 800 if is_centered_wide else 400
     offset_x = 200 if is_centered_wide else 0
     svg = f'''<svg width="{width}" height="140" xmlns="http://www.w3.org/2000/svg">
-  {defs_only()}
+  {defs_premium()}
   <rect x="{15 + offset_x}" y="10" width="370" height="120" fill="{T['NODE_BG']}" fill-opacity="0.9" stroke="{T['GRID_COLOR']}" stroke-width="2" rx="10" filter="url(#drop-shadow)"/>
   <circle cx="{45 + offset_x}" cy="40" r="16" fill="none" stroke="{T['LINE_COLOR']}" stroke-width="2"/>
   <circle cx="{45 + offset_x}" cy="40" r="6" fill="{T['LINE_COLOR']}" filter="url(#neon-glow)"/>
@@ -279,7 +279,7 @@ if __name__ == "__main__":
     import time
     v = int(time.time())
     
-    readme = f'''<div align="center">
+    readme = f'''<div align="center" style="line-height: 0; font-size: 0;">
 <img src="./assets/blueprint_v100.svg?v={v}" style="display: block; margin: 0; padding: 0; border: none; outline: none;" />
 
 <!-- INTERACTIVE DEPLOYMENTS (REPO CARDS) -->
