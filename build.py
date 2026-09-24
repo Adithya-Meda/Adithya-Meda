@@ -269,4 +269,16 @@ if __name__ == "__main__":
         is_odd_total = (len(repos) % 2 != 0)
         is_centered_wide = (is_last and is_odd_total)
         generate_repo_blueprint(repo['name'], repo['desc'], is_centered_wide)
-    print("Generated unified main SVG and repo cards!")
+        print("Generated unified main SVG and repo cards!")
+
+import build
+
+readme = f"""<div align="center">
+<img src="./assets/blueprint_main.svg?v=17" style="display: block; margin: 0; padding: 0; border: none; outline: none;" />
+<a href="https://github.com/Adithya-Meda/wisebiz-ecommerce-app"><img src="./assets/repo_wisebiz-ecommerce-app.svg?v=17" alt="AWS Landing Zone Resource" style="vertical-align: top;"></a><a href="https://github.com/Adithya-Meda/wisebiz-gitops"><img src="./assets/repo_wisebiz-gitops.svg?v=17" alt="K8s GitOps Resource" style="vertical-align: top;"></a>
+<a href="https://github.com/Adithya-Meda/wisebiz-terraform" style="display: block;"><img src="./assets/repo_wisebiz-terraform.svg?v=17" alt="Wisebiz Terraform Resource" style="display: block;"></a>
+</div>"""
+
+with open("README.md", "w", encoding="utf-8") as f:
+    f.write(readme)
+
