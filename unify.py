@@ -1,96 +1,19 @@
 import os
-import html
-import json
-import urllib.request
+import re
 
-os.makedirs("assets", exist_ok=True)
+with open("original_build.py", "r", encoding="utf-8") as f:
+    lines = f.readlines()
 
-# ==========================================
-# 🔧 USER CONFIGURATION - EDIT YOUR DETAILS HERE!
-# ==========================================
-CONFIG = {
-    "theme": {
-        "BG_COLOR": "#0a192f",
-        "GRID_COLOR": "#172a45",
-        "LINE_COLOR": "#64ffda",
-        "TEXT_MAIN": "#e6f1ff",
-        "TEXT_DIM": "#8892b0",
-        "NODE_BG": "#112240"
-    },
-    "profile": {
-        "github_username": "Adithya-Meda",
-        "region": "India",
-        "title": "Senior DevOps Engineer",
-        "subtitle": "< Automating Infrastructure at Scale />"
-    },
-    "philosophy": {
-        "automation": "Everything as Code",
-        "security": "Shift-Left & Zero Trust"
-    },
-    "dns_records": [
-        {"name": "linkedin", "type": "CNAME", "value": "linkedin.com/in/adithya-m-s-95411b83/", "color": "#64ffda"},
-        {"name": "email", "type": "MX", "value": "mailto:adithyams93@outlook.com", "color": "#BC8CFF"},
-        {"name": "medium", "type": "A", "value": "medium.com/@adithyameda", "color": "#FF9900"},
-        {"name": "hashnode", "type": "A", "value": "hashnode.com/@adithyameda", "color": "#FF9900"},
-        {"name": "Digital Badges", "type": "A", "value": "credly.com/users/adithya-ms.f90708a6/badges/credly", "color": "#FF9900"}
-    ],
-    "skills": [
-        ("AWS", 150),
-        ("Kubernetes", 270),
-        ("Terraform", 390),
-        ("Docker", 510),
-        ("CI/CD", 630)
-    ],
-    "stats": {
-        "commits": 1450,
-        "prs": 120,
-        "issues": 45,
-        "uptime": "99%"
-    },
-    "repos": [
-        {"name": "wisebiz-ecommerce-app", "desc": "Microservices based E-commerce platform"},
-        {"name": "wisebiz-gitops", "desc": "Automated deployment with ArgoCD"},
-        {"name": "wisebiz-terraform", "desc": "Terraform modules for Cloud Infrastructure"}
-    ]
-}
-# ==========================================
+new_lines = []
+for line in lines:
+    if line.startswith("def generate_blueprint_header():"):
+        break
+    new_lines.append(line)
 
-# Apply theme globally for easy access
-T = CONFIG["theme"]
+new_build_py = "".join(new_lines)
 
-def write_svg(filename, content):
-    with open(f"assets/{filename}", "w", encoding="utf-8") as f:
-        f.write(content)
-
-def defs_premium():
-    return f"""
-  <defs>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="{T['GRID_COLOR']}" stroke-width="1"/>
-      <circle cx="40" cy="40" r="1" fill="{T['GRID_COLOR']}" />
-    </pattern>
-    <filter id="drop-shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#020c1b" flood-opacity="0.8"/>
-    </filter>
-    <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur1" />
-      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur2" />
-      <feMerge>
-        <feMergeNode in="blur2" />
-        <feMergeNode in="blur1" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-    <linearGradient id="chart-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="{T['LINE_COLOR']}" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="{T['LINE_COLOR']}" stop-opacity="0.0"/>
-    </linearGradient>
-  </defs>
-  <rect width="100%" height="100%" fill="{T['BG_COLOR']}" />
-  <rect width="100%" height="100%" fill="url(#grid)" />
-"""
-
-
+# Now we append the unified layout function and the original repo card function
+new_build_py += """
 def generate_blueprint_main():
     import html
     
@@ -270,3 +193,31 @@ if __name__ == "__main__":
         is_centered_wide = (is_last and is_odd_total)
         generate_repo_blueprint(repo['name'], repo['desc'], is_centered_wide)
     print("Generated unified main SVG and repo cards!")
+"""
+
+with open("build.py", "w", encoding="utf-8") as f:
+    f.write(new_build_py)
+
+import os
+os.system("python build.py")
+
+readme = '<div align="center">\n'
+readme += '<img src="./assets/blueprint_main.svg?v=15" style="display: block; margin: 0; padding: 0; border: none; outline: none;" />\n'
+readme += """
+<!-- INTERACTIVE DEPLOYMENTS (REPO CARDS) -->
+<div style="display: flex; flex-wrap: wrap; justify-content: center; width: 800px; max-width: 100%; margin: 0; padding: 0;">
+  <a href="https://github.com/Adithya-Meda/wisebiz-ecommerce-app" style="display: block;"><img src="./assets/repo_wisebiz-ecommerce-app.svg?v=15" alt="AWS Landing Zone Resource" style="display: block;"></a>
+  <a href="https://github.com/Adithya-Meda/wisebiz-gitops" style="display: block;"><img src="./assets/repo_wisebiz-gitops.svg?v=15" alt="K8s GitOps Resource" style="display: block;"></a>
+  <a href="https://github.com/Adithya-Meda/wisebiz-terraform" style="display: block;"><img src="./assets/repo_wisebiz-terraform.svg?v=15" alt="Wisebiz Terraform Resource" style="display: block;"></a>
+</div>
+</div>
+"""
+
+with open("README.md", "w", encoding="utf-8") as f:
+    f.write(readme)
+
+# Cleanup old fragments
+for file in os.listdir("assets"):
+    if file.startswith("blueprint_") and file != "blueprint_main.svg":
+        os.remove(os.path.join("assets", file))
+
