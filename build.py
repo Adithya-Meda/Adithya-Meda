@@ -113,7 +113,7 @@ def generate_blueprint_main():
     title_escaped = html.escape(p.get("title", ""))
     region_text = f"REGION: {p.get('region', 'GLOBAL')}"
     
-    cutout_width = 115
+    cutout_width = 100
     
     svg = f'''<svg width="800" height="840" xmlns="http://www.w3.org/2000/svg">
   {defs_premium()}
