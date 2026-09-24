@@ -28,11 +28,8 @@ CONFIG = {
         "security": "Shift-Left & Zero Trust"
     },
     "dns_records": [
-        {"name": "linkedin", "type": "CNAME", "value": "linkedin.com/in/adithya-m-s-95411b83/", "color": "#64ffda"},
-        {"name": "email", "type": "MX", "value": "mailto:adithyams93@outlook.com", "color": "#BC8CFF"},
-        {"name": "medium", "type": "A", "value": "medium.com/@adithyameda", "color": "#FF9900"},
-        {"name": "hashnode", "type": "A", "value": "hashnode.com/@adithyameda", "color": "#FF9900"},
-        {"name": "Digital Badges", "type": "A", "value": "credly.com/users/adithya-ms.f90708a6/badges/credly", "color": "#FF9900"}
+        {"name": "linkedin", "type": "CNAME", "value": "linkedin.com/in/", "color": "#64ffda"},
+        {"name": "email", "type": "MX", "value": "mailto:", "color": "#BC8CFF"}
     ],
     "skills": [
         ("AWS", 150),
