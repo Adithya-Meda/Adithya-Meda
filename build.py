@@ -111,9 +111,9 @@ def generate_blueprint_main():
     automation_escaped = html.escape(phil.get("automation", ""))
     security_escaped = html.escape(phil.get("security", ""))
     title_escaped = html.escape(p.get("title", ""))
-    region_text = f"REGION: {p.get('region', 'GLOBAL')} ----------"
+    region_text = f"REGION: {p.get('region', 'GLOBAL')}"
     
-    cutout_width = len(region_text) * 8 + 20
+    cutout_width = 115
     
     svg = f'''<svg width="800" height="840" xmlns="http://www.w3.org/2000/svg">
   {defs_premium()}
