@@ -222,7 +222,7 @@ def generate_blueprint_main():
 
 </svg>'''
     
-    write_svg("blueprint_final.svg", svg)
+    write_svg("blueprint_v100.svg", svg)
 
 def fetch_github_stats(username):
     headers = {'User-Agent': 'Mozilla/5.0'}
@@ -276,7 +276,7 @@ if __name__ == "__main__":
     v = int(time.time())
     
     readme = f'''<div align="center">
-<img src="./assets/blueprint_final.svg?v={v}" style="display: block; margin: 0; padding: 0; border: none; outline: none;" />
+<img src="./assets/blueprint_v100.svg?v={v}" style="display: block; margin: 0; padding: 0; border: none; outline: none;" />
 
 <!-- INTERACTIVE DEPLOYMENTS (REPO CARDS) -->
 <a href="https://github.com/Adithya-Meda/wisebiz-ecommerce-app"><img src="./assets/repo_wisebiz-ecommerce-app.svg?v={v}" alt="AWS Landing Zone Resource" style="vertical-align: top;"></a><a href="https://github.com/Adithya-Meda/wisebiz-gitops"><img src="./assets/repo_wisebiz-gitops.svg?v={v}" alt="K8s GitOps Resource" style="vertical-align: top;"></a>
