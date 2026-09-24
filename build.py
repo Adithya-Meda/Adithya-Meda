@@ -164,7 +164,7 @@ def generate_dns_socials():
     for i, r in enumerate(records):
         svg_row = f'''<svg width="800" height="40" xmlns="http://www.w3.org/2000/svg">
   {defs_premium()}
-  <rect x="20" y="0" width="760" height="35" fill="{T['NODE_BG']}" fill-opacity="0.6" stroke="{T['TEXT_DIM']}" stroke-opacity="0.4" stroke-width="1" rx="6" />
+  <rect x="20" y="0" width="760" height="35" fill="{T['NODE_BG']}" fill-opacity="0.6" stroke="{T['TEXT_DIM']}" stroke-width="1" rx="6" />
   <text x="40" y="22" font-family="sans-serif" font-size="14" fill="{T['TEXT_MAIN']}">{r['name']}</text>
   <rect x="230" y="9" width="60" height="18" fill="{r['color']}" fill-opacity="0.2" rx="4"/>
   <text x="260" y="22" font-family="monospace" font-size="12" fill="{r['color']}" text-anchor="middle">{r['type']}</text>
