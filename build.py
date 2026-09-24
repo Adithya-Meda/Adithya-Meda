@@ -253,7 +253,7 @@ def generate_repo_blueprint(name, desc, is_centered_wide=False):
     width = 800 if is_centered_wide else 400
     offset_x = 200 if is_centered_wide else 0
     svg = f'''<svg width="{width}" height="140" xmlns="http://www.w3.org/2000/svg">
-  {defs_premium()}
+  {defs_only()}
   <rect x="{15 + offset_x}" y="10" width="370" height="120" fill="{T['NODE_BG']}" fill-opacity="0.9" stroke="{T['GRID_COLOR']}" stroke-width="2" rx="10" filter="url(#drop-shadow)"/>
   <circle cx="{45 + offset_x}" cy="40" r="16" fill="none" stroke="{T['LINE_COLOR']}" stroke-width="2"/>
   <circle cx="{45 + offset_x}" cy="40" r="6" fill="{T['LINE_COLOR']}" filter="url(#neon-glow)"/>
@@ -263,7 +263,7 @@ def generate_repo_blueprint(name, desc, is_centered_wide=False):
   <text x="{55 + offset_x}" y="110" font-family="monospace" font-size="11" fill="{T['LINE_COLOR']}" letter-spacing="1">ACTIVE DEPLOYMENT</text>
   <style>rect:hover {{ stroke: {T['LINE_COLOR']}; }}</style>
 </svg>'''
-    write_svg(f"repo_{filename}.svg", svg)
+    write_svg(f"repo_v101_{filename}.svg", svg)
 
 if __name__ == "__main__":
     generate_blueprint_main()
@@ -283,8 +283,8 @@ if __name__ == "__main__":
 <img src="./assets/blueprint_v100.svg?v={v}" style="display: block; margin: 0; padding: 0; border: none; outline: none;" />
 
 <!-- INTERACTIVE DEPLOYMENTS (REPO CARDS) -->
-<a href="https://github.com/Adithya-Meda/wisebiz-ecommerce-app"><img src="./assets/repo_wisebiz-ecommerce-app.svg?v={v}" alt="AWS Landing Zone Resource" style="vertical-align: top;"></a><a href="https://github.com/Adithya-Meda/wisebiz-gitops"><img src="./assets/repo_wisebiz-gitops.svg?v={v}" alt="K8s GitOps Resource" style="vertical-align: top;"></a>
-<a href="https://github.com/Adithya-Meda/wisebiz-terraform"><img src="./assets/repo_wisebiz-terraform.svg?v={v}" alt="Wisebiz Terraform Resource" style="display: block;"></a>
+<a href="https://github.com/Adithya-Meda/wisebiz-ecommerce-app"><img src="./assets/repo_v101_wisebiz-ecommerce-app.svg?v={v}" alt="AWS Landing Zone Resource" style="vertical-align: top;"></a><a href="https://github.com/Adithya-Meda/wisebiz-gitops"><img src="./assets/repo_v101_wisebiz-gitops.svg?v={v}" alt="K8s GitOps Resource" style="vertical-align: top;"></a>
+<a href="https://github.com/Adithya-Meda/wisebiz-terraform"><img src="./assets/repo_v101_wisebiz-terraform.svg?v={v}" alt="Wisebiz Terraform Resource" style="display: block;"></a>
 </div>
 '''
 
