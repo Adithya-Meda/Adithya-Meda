@@ -126,7 +126,7 @@ def generate_blueprint_main():
     
     <g transform="translate(0, 40)">
       <path id="data-path" d="M 180 50 C 220 50, 220 110, 270 110" fill="none" stroke="{T['LINE_COLOR']}" stroke-width="2" stroke-dasharray="4,4"/>
-      <circle cx="210" cy="80" r="4" fill="#ffffff" filter="url(#drop-shadow)"/>
+      <circle r="4" fill="#ffffff" filter="url(#neon-glow)"><animateMotion dur="2s" repeatCount="indefinite"><mpath href="#data-path"/></animateMotion></circle>
       
       <g transform="translate(40, 20)" filter="url(#drop-shadow)">
         <rect width="140" height="70" fill="{T['NODE_BG']}" stroke="{T['LINE_COLOR']}" stroke-width="1" rx="8"/>
@@ -148,7 +148,7 @@ def generate_blueprint_main():
       </g>
       
       <path id="data-path-out" d="M 590 110 C 640 110, 640 50, 680 50" fill="none" stroke="{T['LINE_COLOR']}" stroke-width="2" stroke-dasharray="4,4"/>
-      <circle cx="615" cy="80" r="4" fill="#ffffff" filter="url(#drop-shadow)"/>
+      <circle r="4" fill="#ffffff" filter="url(#neon-glow)"><animateMotion dur="2.5s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#data-path-out"/></animateMotion></circle>
       <g transform="translate(670, 30)" filter="url(#drop-shadow)">
         <path d="M 0 20 Q 40 0 80 20 L 80 60 Q 40 80 0 60 Z" fill="{T['NODE_BG']}" stroke="{T['LINE_COLOR']}" stroke-width="1"/>
         <path d="M 0 20 Q 40 40 80 20" fill="none" stroke="{T['LINE_COLOR']}" stroke-width="1"/>
