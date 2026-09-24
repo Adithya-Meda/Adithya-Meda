@@ -113,7 +113,7 @@ def generate_blueprint_main():
     title_escaped = html.escape(p.get("title", ""))
     region_text = f"REGION: {p.get('region', 'GLOBAL')}"
     
-    cutout_width = 100
+    cutout_width = 85
     
     svg = f'''<svg width="800" height="840" xmlns="http://www.w3.org/2000/svg">
   {defs_premium()}
@@ -222,7 +222,7 @@ def generate_blueprint_main():
 
 </svg>'''
     
-    write_svg("blueprint_main.svg", svg)
+    write_svg("blueprint_final.svg", svg)
 
 def fetch_github_stats(username):
     headers = {'User-Agent': 'Mozilla/5.0'}
