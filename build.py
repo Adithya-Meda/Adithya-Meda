@@ -111,9 +111,9 @@ def generate_blueprint_main():
     automation_escaped = html.escape(phil.get("automation", ""))
     security_escaped = html.escape(phil.get("security", ""))
     title_escaped = html.escape(p.get("title", ""))
-    region_text = f"REGION: {p.get('region', 'GLOBAL')}"
+    region_text = f"REGION: {p.get('region', 'GLOBAL')} ----------"
     
-    cutout_width = len(region_text) * 8 + 40
+    cutout_width = len(region_text) * 8 + 20
     
     svg = f'''<svg width="800" height="840" xmlns="http://www.w3.org/2000/svg">
   {defs_premium()}
@@ -246,7 +246,7 @@ def fetch_github_stats(username):
 
 def generate_repo_blueprint(name, desc, is_centered_wide=False):
     filename = name.replace(" ", "_").lower()
-    width = 800 if is_centered_wide else 400
+    width = 800 if is_centered_wide else 395
     offset_x = 200 if is_centered_wide else 0
     svg = f'''<svg width="{width}" height="140" xmlns="http://www.w3.org/2000/svg">
   {defs_premium()}
