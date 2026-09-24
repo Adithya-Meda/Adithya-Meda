@@ -62,6 +62,10 @@ def write_svg(filename, content):
     with open(f"assets/{filename}", "w", encoding="utf-8") as f:
         f.write(content)
 
+
+def defs_only():
+    return defs_premium().split("<rect width=")[0]
+
 def defs_premium():
     return f"""
   <defs>
@@ -249,7 +253,7 @@ def generate_repo_blueprint(name, desc, is_centered_wide=False):
     width = 800 if is_centered_wide else 395
     offset_x = 200 if is_centered_wide else 0
     svg = f'''<svg width="{width}" height="140" xmlns="http://www.w3.org/2000/svg">
-  {defs_premium()}
+  {defs_only()}
   <rect x="{15 + offset_x}" y="10" width="370" height="120" fill="{T['NODE_BG']}" fill-opacity="0.9" stroke="{T['GRID_COLOR']}" stroke-width="2" rx="10" filter="url(#drop-shadow)"/>
   <circle cx="{45 + offset_x}" cy="40" r="16" fill="none" stroke="{T['LINE_COLOR']}" stroke-width="2"/>
   <circle cx="{45 + offset_x}" cy="40" r="6" fill="{T['LINE_COLOR']}" filter="url(#neon-glow)"/>
