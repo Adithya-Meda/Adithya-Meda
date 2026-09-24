@@ -161,7 +161,7 @@ def generate_blueprint_main():
   <g transform="translate(0, 280)">
     <rect x="20" y="20" width="760" height="140" fill="{T['NODE_BG']}" fill-opacity="0.8" stroke="{T['GRID_COLOR']}" stroke-width="1" rx="8"/>
     <text x="40" y="45" font-family="sans-serif" font-size="12" fill="{T['TEXT_DIM']}" font-weight="bold" letter-spacing="1">CONFIGMAP: ENGINEERING_PHILOSOPHY.YAML</text>
-    <g font-family="monospace" font-size="14" fill="{T['TEXT_MAIN']}" transform="translate(40, 80)">
+    <g font-family="monospace" font-size="14" fill="{T['TEXT_MAIN']}" transform="translate(40, 60)">
       <text y="0"><tspan fill="#FFBD2E">apiVersion:</tspan> v1</text>
       <text y="20"><tspan fill="#FFBD2E">kind:</tspan> CoreValues</text>
       <text y="40"><tspan fill="#FFBD2E">data:</tspan></text>
