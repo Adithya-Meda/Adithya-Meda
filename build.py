@@ -227,6 +227,9 @@ def generate_blueprint_main():
 
 def fetch_github_stats(username):
     headers = {'User-Agent': 'Mozilla/5.0'}
+    token = os.environ.get("GITHUB_TOKEN")
+    if token:
+        headers['Authorization'] = f"Bearer {token}"
     stats = {"commits": 0, "prs": 0, "issues": 0}
     try:
         req = urllib.request.Request(f"https://api.github.com/search/commits?q=author:{username}", headers={**headers, 'Accept': 'application/vnd.github.cloak-preview'})
