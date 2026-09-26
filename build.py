@@ -21,7 +21,7 @@ CONFIG = {
         "github_username": "Adithya-Meda",
         "region": "India",
         "title": "Senior DevOps Engineer",
-        "subtitle": "< Automating Infrastructure at Scale />"
+        "subtitle": "< Senior DevOps Engineer />"
     },
     "philosophy": {
         "automation": "Everything as Code",
