@@ -285,7 +285,7 @@ if __name__ == "__main__":
 
 <!-- INTERACTIVE DEPLOYMENTS (REPO CARDS) -->
 <a href="https://github.com/Adithya-Meda/wisebiz-ecommerce-app"><img src="./assets/repo_v101_wisebiz-ecommerce-app.svg?v={v}" alt="AWS Landing Zone Resource" style="vertical-align: top;"></a><a href="https://github.com/Adithya-Meda/wisebiz-gitops"><img src="./assets/repo_v101_wisebiz-gitops.svg?v={v}" alt="K8s GitOps Resource" style="vertical-align: top;"></a>
-<a href="https://github.com/Adithya-Meda/wisebiz-terraform"><img src="./assets/repo_v101_wisebiz-terraform.svg?v={v}" alt="Wisebiz Terraform Resource" style="display: block;"></a><a href="https://github.com/Adithya-Meda/wisebizops"><img src="./assets/repo_v101_wisebiz-terraform.svg?v={v}" alt="Wisebiz Terraform Resource" style="display: block;"></a>
+<a href="https://github.com/Adithya-Meda/wisebiz-terraform"><img src="./assets/repo_v101_wisebiz-terraform.svg?v={v}" alt="Wisebiz Terraform Resource" style="vertical-align: top;"></a><a href="https://github.com/Adithya-Meda/wisebizops"><img src="./assets/repo_v101_wisebizops.svg?v={v}" alt="WisebizOps Resource" style="vertical-align: top;"></a>
 </div>
 '''
 
