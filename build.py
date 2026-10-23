@@ -135,7 +135,7 @@ def generate_blueprint_main():
         <circle cx="20" cy="20" r="6" fill="none" stroke="{T['LINE_COLOR']}" stroke-width="2"/>
         <circle cx="20" cy="20" r="2" fill="{T['LINE_COLOR']}"/>
         <text x="40" y="23" font-family="sans-serif" font-size="10" fill="{T['TEXT_DIM']}">INGRESS ROUTER</text>
-        <text x="40" y="41" font-family="monospace" font-size="14" fill="{T['TEXT_MAIN']}" font-weight="bold">App ALB</text>
+        <text x="40" y="41" font-family="monospace" font-size="14" fill="{T['TEXT_MAIN']}" font-weight="bold">Projects</text>
       </g>
       
       <g transform="translate(270, 40)" filter="url(#drop-shadow)">
