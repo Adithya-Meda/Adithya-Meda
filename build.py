@@ -20,8 +20,8 @@ CONFIG = {
     "profile": {
         "github_username": "Adithya-Meda",
         "region": "India",
-        "title": "Senior DevOps Engineer",
-        "subtitle": "< Senior DevOps Engineer />"
+        "title": "Project Lead",
+        "subtitle": "< Project Lead />"
     },
     "philosophy": {
         "automation": "Everything as Code",
